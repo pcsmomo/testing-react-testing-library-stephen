@@ -10,7 +10,11 @@ test('render one row per user', () => {
   render(<UserList users={users} />);
 
   // Find all the rows in the table
+  // screen.logTestingPlaygroundURL();
+  const rows = screen.getAllByRole('row');
+
   // Assert: correct number of rows
+  expect(rows).toHaveLength(2);
 });
 
 test('render the email and name of each user', () => {});
