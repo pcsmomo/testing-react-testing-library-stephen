@@ -24,4 +24,13 @@ screen.logTestingPlaygroundURL();
 <tr style="border: 10px solid red; display:block;"></tr>
 ```
 
+### 20. Query Function Escape Hatches
+
+> Tip - Don't obsess over getting the 'right' query
+
+Two 'escape hatches'
+
+- Fallback #1: data-testid (not really recommended)
+- Fallback #2: container.querySelector();
+
 </details>
