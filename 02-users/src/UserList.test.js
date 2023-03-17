@@ -7,11 +7,20 @@ test('render one row per user', () => {
     { name: 'jane', email: 'jane@jane.com' },
     { name: 'sam', email: 'sam@sam.com' },
   ];
+
+  // Way 1. set data-testid on the tbody
   render(<UserList users={users} />);
 
   // Find all the rows in the table
   // screen.logTestingPlaygroundURL();
   const rows = within(screen.getByTestId('users')).getAllByRole('row');
+
+  // Way 2. set data-testid on the tbody
+  // const { container } = render(<UserList users={users} />);
+
+  // // Find all the rows in the table
+  // // eslint-disable-next-line
+  // const rows = container.querySelectorAll('tbody tr');
 
   // Assert: correct number of rows
   expect(rows).toHaveLength(2);

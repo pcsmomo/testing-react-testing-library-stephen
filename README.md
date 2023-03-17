@@ -30,7 +30,15 @@ screen.logTestingPlaygroundURL();
 
 Two 'escape hatches'
 
-- Fallback #1: data-testid (not really recommended)
+- Fallback #1: data-testid (is preffered then querySelector())
 - Fallback #2: container.querySelector();
+
+### 21. Another Query Function Fallback
+
+```js
+const { container } = render(<UserList users={users} />);
+// eslint-disable-next-line
+const rows = container.querySelectorAll('tbody tr');
+```
 
 </details>
