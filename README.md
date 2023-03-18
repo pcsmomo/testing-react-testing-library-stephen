@@ -41,4 +41,11 @@ const { container } = render(<UserList users={users} />);
 const rows = container.querySelectorAll('tbody tr');
 ```
 
+### 24. Testing the Whole App
+
+```js
+// investigate the current state of screen
+screen.debug();
+```
+
 </details>
