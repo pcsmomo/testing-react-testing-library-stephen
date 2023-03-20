@@ -4,6 +4,10 @@ React Testing Library and Jest: The Complete Guide by Stephen Grider
 
 ## Folder structure
 
+- 02-users
+- 03-element-roles
+  - `npx rtl-book serve roles-notes.js`
+
 # Details
 
 <details open>
@@ -46,6 +50,17 @@ const rows = container.querySelectorAll('tbody tr');
 ```js
 // investigate the current state of screen
 screen.debug();
+```
+
+## Section 3: Understanding Element Roles
+
+### 27. Introducing RTL Book
+
+Stephen's custom cheatsheet looks like Jupyter notebook
+
+```sh
+# 03-element-roles
+npx rtl-book serve roles-notes.js
 ```
 
 </details>
