@@ -1,5 +1,3 @@
-import { render, screen } from '@testing-library/react';
-
 function RoleExample() {
   return (
     <div>
@@ -19,4 +17,4 @@ function RoleExample() {
   );
 }
 
-render(<RoleExample />);
+export default RoleExample;
