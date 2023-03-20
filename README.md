@@ -7,6 +7,8 @@ React Testing Library and Jest: The Complete Guide by Stephen Grider
 - 02-users
 - 03-element-roles
   - `npx rtl-book serve roles-notes.js`
+- 04-query-functions
+  - `npx rtl-book serve query-notes.js`
 
 # Details
 
