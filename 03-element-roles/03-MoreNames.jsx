@@ -9,4 +9,5 @@ function MoreNames() {
     </div>
   );
 }
-render(<MoreNames />);
+
+export default MoreNames;
