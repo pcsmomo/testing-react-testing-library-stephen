@@ -19,3 +19,27 @@ test('getBy, queryBy, findBy finding 0 elements', async () => {
   }
   expect(errorThrown).toEqual(true);
 });
+
+test('getBy, queryBy, findBy when they find 1 element', async () => {
+  render(<ColorList />);
+
+  expect(screen.getByRole('list')).toBeInTheDocument();
+  expect(screen.queryByRole('list')).toBeInTheDocument();
+  expect(await screen.findByRole('list')).toBeInTheDocument();
+});
+
+test('getBy, queryBy, findBy when finding > 1 elements', async () => {
+  render(<ColorList />);
+
+  expect(() => screen.getByRole('listitem')).toThrow();
+
+  expect(() => screen.queryByRole('listitem')).toThrow();
+
+  let errorThrown = false;
+  try {
+    await screen.findByRole('listitem');
+  } catch (err) {
+    errorThrown = true;
+  }
+  expect(errorThrown).toEqual(true);
+});
