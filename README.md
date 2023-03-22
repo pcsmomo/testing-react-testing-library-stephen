@@ -9,6 +9,8 @@ React Testing Library and Jest: The Complete Guide by Stephen Grider
   - `npx rtl-book serve roles-notes.js`
 - 04-query-functions
   - `npx rtl-book serve query-notes.js`
+- 05-query-criteria
+  - `npx rtl-book serve criteria-notes.js`
 
 # Details
 
@@ -63,6 +65,15 @@ Stephen's custom cheatsheet looks like Jupyter notebook
 ```sh
 # 03-element-roles
 npx rtl-book serve roles-notes.js
+```
+
+## Section 5: Query Function Suffixes
+
+### 43. When to Use Each Suffix
+
+```js
+// for tooltip
+screen.getByTitle('Click when ready to submit');
 ```
 
 </details>
