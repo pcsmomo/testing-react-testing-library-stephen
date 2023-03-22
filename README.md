@@ -11,6 +11,8 @@ React Testing Library and Jest: The Complete Guide by Stephen Grider
   - `npx rtl-book serve query-notes.js`
 - 05-query-criteria
   - `npx rtl-book serve criteria-notes.js`
+- 06-matchers
+  - `npx rtl-book serve matcher-notes.js`
 
 # Details
 
