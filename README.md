@@ -78,4 +78,27 @@ npx rtl-book serve roles-notes.js
 screen.getByTitle('Click when ready to submit');
 ```
 
+## Section 6: Matchers in Jest### 47. Implementing a Custom Matcher
+
+```js
+// Jest custom matcher
+function toContainRole(container, role, quantity = 1) {
+  const elements = within(container).getAllByRole(role);
+
+  if (elements.length === quantity) {
+    return {
+      pass: true,
+    };
+  }
+
+  return {
+    pass: false,
+    message: () =>
+      `Expected to find ${quantity} ${role} elements. Found ${elements.length} instead.`,
+  };
+}
+
+expect.extend({ toContainRole });
+```
+
 </details>
