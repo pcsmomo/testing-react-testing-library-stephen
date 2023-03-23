@@ -14,6 +14,10 @@ React Testing Library and Jest: The Complete Guide by Stephen Grider
 - 06-matchers
   - `npx rtl-book serve matcher-notes.js`
 
+### from section 7 to 10
+
+- ## 07-overview
+
 # Details
 
 <details open>
@@ -100,5 +104,17 @@ function toContainRole(container, role, quantity = 1) {
 
 expect.extend({ toContainRole });
 ```
+
+## Section 7: Big Project Overview
+
+### 49. App Overview and Setup
+
+```sh
+# codesplain
+npm install
+npm start
+```
+
+[Prisma - Node.js and TypeScript ORM](https://www.prisma.io/)
 
 </details>
