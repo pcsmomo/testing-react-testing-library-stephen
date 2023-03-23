@@ -4,7 +4,18 @@ import FormData from './FormData';
 test('the form displays two buttons', () => {
   render(<FormData />);
 
-  const buttons = screen.getAllByRole('button');
+  const form = screen.getByRole('form');
+  const buttons = within(form).getAllByRole('button');
 
   expect(buttons).toHaveLength(2);
+});
+
+test('the form displays two buttons with custom matcher', () => {
+  render(<FormData />);
+
+  const form = screen.getByRole('form');
+  const buttons = within(form).getAllByRole('button');
+
+  expect(buttons).toHaveLength(2);
+  expect(form).toContainRole('button', 2);
 });
