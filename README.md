@@ -117,4 +117,22 @@ npm start
 
 [Prisma - Node.js and TypeScript ORM](https://www.prisma.io/)
 
+### 51. The Path Ahead
+
+### Testing in reality
+
+- Users complain to your companies support team about a bug
+- Support team gives a workaround to the bug
+- Support team gets tired of the 1 million tickets being filled and tells a project manager about the bug
+- Project manager tells an engineering manager that the bug needs to be fixed
+- Engineering manager tells you to fix the bug, probably without a lot of details
+- You need to find the bug, fix it, and **write a test to confirm it is fixed**
+
+### The Plan Ahead
+
+- We are going to pretend we are engineers working on the Codesplain project
+- We are going to receive bug reports that sometimes provide... less information than we'd hope for
+- Figure out hot to find the relavant code + fix it
+- **Figure out how to write code to confirm the big is fixed**
+
 </details>
