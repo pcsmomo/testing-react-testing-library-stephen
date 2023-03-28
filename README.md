@@ -154,4 +154,19 @@ npm start
 - MemoryRouter: Stores current URL in memory
   - Many blog posts recommend using this for testing purposes. We will too, but eventually replace it
 
+### 61. Act Included with React Testing Library
+
+Important Items
+
+1. Unexpected state updates in tests are bad
+2. The act function defines a window in time where state updates can (and should) occur
+3. React Testing Library uses `act` behind the scenes for you!
+   - `screen.findBy...`
+   - `screen.findAllBy...`
+   - `waitFor`
+   - `user.keyboard`
+   - `user.click`
+   - automatically call `act` for you and this is the preferred way of using `act` when using RTL
+4. To solve act warnings, you should use a `findBy`. Usually you don't want to follow the advice of the warning
+
 </details>
