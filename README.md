@@ -119,7 +119,7 @@ npm start
 
 ### 51. The Path Ahead
 
-### Testing in reality
+#### Testing in reality
 
 - Users complain to your companies support team about a bug
 - Support team gives a workaround to the bug
@@ -128,11 +128,19 @@ npm start
 - Engineering manager tells you to fix the bug, probably without a lot of details
 - You need to find the bug, fix it, and **write a test to confirm it is fixed**
 
-### The Plan Ahead
+#### The Plan Ahead
 
 - We are going to pretend we are engineers working on the Codesplain project
 - We are going to receive bug reports that sometimes provide... less information than we'd hope for
 - Figure out hot to find the relavant code + fix it
 - **Figure out how to write code to confirm the big is fixed**
+
+### 52. A Process for Debugging
+
+- Find the relavant components in the codebase
+- Figure out how the component is getting its data/state/props
+- User a debugger, consolelog, or documentation to understand the data
+- Implement a fix
+- Test the fix
 
 </details>
