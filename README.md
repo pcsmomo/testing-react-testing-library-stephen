@@ -169,4 +169,19 @@ Important Items
    - automatically call `act` for you and this is the preferred way of using `act` when using RTL
 4. To solve act warnings, you should use a `findBy`. Usually you don't want to follow the advice of the warning
 
+> When you see an 'act' warning you almost always do not want to add an `act` to your test\
+> The message says you should! Don't do it!
+
+### 63. Solving the Act Warning
+
+1. (Best) Use a `findBy` or `findAllBy` to detect when the component has finished its data fetching
+2. Use an `act` to control when the data-fetching request gets resolved. More on this later.
+3. Use a module mock to avoid rendering the troublesome component
+4. (Worst) Use an `act` with a `pause`
+
+```js
+// It's a bit nasty becuase this happens in the child component
+await screen.findByRole('img', { name: 'Javascript' });
+```
+
 </details>
