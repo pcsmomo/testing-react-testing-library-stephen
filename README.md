@@ -143,4 +143,15 @@ npm start
 - Implement a fix
 - Test the fix
 
+## Section 8: The Mysterious 'Act' Function!
+
+### 59. Adding Router Context
+
+#### React Router
+
+- BrowserRouter: Stores current URL in the address bar
+- HashRouter: Stores current URL in the # part of the address bar
+- MemoryRouter: Stores current URL in memory
+  - Many blog posts recommend using this for testing purposes. We will too, but eventually replace it
+
 </details>
