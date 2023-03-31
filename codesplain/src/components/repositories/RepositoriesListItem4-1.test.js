@@ -1,14 +1,13 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 
 import RepositoriesListItem from './RepositoriesListItem';
 
-jest.mock('../tree/FileIcon', () => {
-  // Content of FileIcon.js
-  return () => {
-    return 'File Icon Component';
-  };
-});
+// 2. Use an `act` to control when the data-fetching request gets resolved. More on this later.
+
+// 1. (Best) Use a `findBy` or `findAllBy` to detect when the component has finished its data fetching
+// 3. Use a module mock to avoid rendering the troublesome component
+// 4. (Worst) Use an `act` with a `pause`
 
 function renderComponent() {
   const repository = {
@@ -29,8 +28,11 @@ function renderComponent() {
 test('shows a link to the github homepage for this repository', async () => {
   renderComponent();
 
-  // eslint-disable-next-line testing-library/no-debugging-utils
-  screen.debug();
+  await act(async () => {
+    await pause();
+  });
 
-  // await screen.findByRole('img', { name: 'Javascript' });
+  screen.getByRole('img', { name: 'Javascript' });
 });
+
+const pause = () => new Promise((resolve) => setTimeout(resolve, 100));
