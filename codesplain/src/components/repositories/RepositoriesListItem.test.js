@@ -37,3 +37,10 @@ test('shows a link to the github homepage for this repository', async () => {
   });
   expect(link).toHaveAttribute('href', repository.html_url);
 });
+
+test('shows a fileicon with the appropriate icon', async () => {
+  renderComponent();
+
+  const icon = await screen.findByRole('img', { name: 'Javascript' });
+  expect(icon).toHaveClass('js-icon');
+});
