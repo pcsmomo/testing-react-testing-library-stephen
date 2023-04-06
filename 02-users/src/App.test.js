@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import App from './App';
 
-test('can receive a new user and show it on a list', () => {
+test('can receive a new user and show it on a list', async () => {
   render(<App />);
 
   const nameInput = screen.getByRole('textbox', {
@@ -13,12 +13,12 @@ test('can receive a new user and show it on a list', () => {
   });
   const button = screen.getByRole('button');
 
-  user.click(nameInput);
-  user.keyboard('jane');
-  user.click(emailInput);
-  user.keyboard('jane@jane.com');
+  await user.click(nameInput);
+  await user.keyboard('jane');
+  await user.click(emailInput);
+  await user.keyboard('jane@jane.com');
 
-  user.click(button);
+  await user.click(button);
 
   // screen.debug();
   const name = screen.getByRole('cell', { name: 'jane' });
