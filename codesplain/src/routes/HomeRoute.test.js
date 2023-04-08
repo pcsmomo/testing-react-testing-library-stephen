@@ -4,56 +4,40 @@ import { rest } from 'msw';
 import { MemoryRouter } from 'react-router-dom';
 import HomeRoute from './HomeRoute';
 
+import { createServer } from '../test/server';
+
 // GOAL:
-// createServer([
-//   {
-//     path: '/api/repositories',
-//     method: 'GET',
-//     res: (req, res, ctx) => {
-//       return {
-//         items: [{}, {}],
-//       };
-//     },
-//   },
-//   {
-//     path: '/api/repositories',
-//     method: 'POST',
-//     res: (req, res, ctx) => {
-//       return {
-//         items: [{}, {}],
-//       };
-//     },
-//   },
-// ]);
+createServer([
+  {
+    path: '/api/repositories',
+    method: 'get',
+    res: (req, _res, _ctx) => {
+      const language = req.url.searchParams.get('q').split('language:')[1];
 
-const handlers = [
-  rest.get('/api/repositories', (req, res, ctx) => {
-    const language = req.url.searchParams.get('q').split('language:')[1];
-
-    return res(
-      ctx.json({
+      return {
         items: [
           { id: 1, full_name: `${language}_one` },
           { id: 2, full_name: `${language}_two` },
         ],
-      })
-    );
-  }),
-];
+      };
+    },
+  },
+]);
 
-const server = setupServer(...handlers);
+// const handlers = [
+//   rest.get('/api/repositories', (req, res, ctx) => {
+//     const language = req.url.searchParams.get('q').split('language:')[1];
 
-beforeAll(() => {
-  server.listen();
-});
-
-afterEach(() => {
-  server.resetHandlers();
-});
-
-afterAll(() => {
-  server.close();
-});
+//     return res(
+//       ctx.json({
+//         items: [
+//           { id: 1, full_name: `${language}_one` },
+//           { id: 2, full_name: `${language}_two` },
+//         ],
+//       })
+//     );
+//   }),
+// ];
 
 test('renders two links for each language', async () => {
   render(
