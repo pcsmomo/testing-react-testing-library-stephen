@@ -184,4 +184,35 @@ Important Items
 await screen.findByRole('img', { name: 'Javascript' });
 ```
 
+## Section 9: Handling Data Fetching in Tests
+
+### 73. Options for Testing Data Fetching
+
+#### Data Fetching in Tests
+
+- We don't want our components to make actual network requests
+- Slow! Data might change!
+- We fake (or mock) data fetching in tests
+
+#### Options for Testing Data Fetching
+
+1. Mock the file that contains the data fetching
+   ```js
+   jest.mock('../hooks/useRepositories', () => {
+     return () => {
+       return {
+         data: [
+           { name: 'react' },
+           { name: 'bootstrap' },
+           { name: 'javascript' },
+         ],
+       };
+     };
+   });
+   ```
+   - Pros: Easier test! We don't have to understand what the hook does
+   - Cons: Interaction between the hook + component is untested. Who knows if we're using the hook currently?
+2. Use a library to 'mock' axios - get axios to return fake data
+3. Create a manual mock for axio
+
 </details>
